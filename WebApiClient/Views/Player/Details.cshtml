@@ -1,0 +1,122 @@
+﻿@model WebApiClient.Models.PlayerModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="page-header">
+    <h1><small> Read all about @Model.FullName</small></h1>
+</div>
+<div class="row">
+    <div class="col-md-2">
+
+        @if (Model.ImageUrl != null && !String.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Url.Content(Model.ImageUrl)" alt="@Model.FullName" />
+        }
+        else
+        {
+            <img src="http://placehold.it/150x150" />
+        }
+
+    </div>
+    <div class="col-md-4">
+        <h3>@Model.FirstName @Model.LastName</h3>
+        <p>@Model.FirstName was born on @Model.Age</p>
+        <p>@Model.SpecialRole</p>
+        <p>@Model.Role</p>
+        <p>@Model.Batting</p>
+        <p>@Model.Bowling</p>
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@*<h2>Details</h2>
+
+    <div>
+        <div>
+        <h4>Player : <small> Read all about @Model.FullName</small></h4>
+        </div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TeamName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProfileUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProfileUrl)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImageUrl)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SpecialRole)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SpecialRole)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApiClient.Models.TeamModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#">
+        @foreach (var team in Model)
+        {
+            if (team.Selected == true)
+            {
+                @team.Text
+            }
+        }
+        <i class="fa fa-angle-down pull-right"></i>
+    </a>
+    <ul class="dropdown-menu">
+
+        @foreach (var currency in currencies)
+        {
+            <li><a href="@currency.Value">@currency.Text</a></li>
+
+        }
+
+    </ul>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeamName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>

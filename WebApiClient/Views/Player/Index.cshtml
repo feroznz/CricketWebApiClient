@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebApiClient.Models.PlayerModel>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<ul class="nav nav-pills">
+    @foreach (var i in Model) {
+        <li @(i.Selected) ? "class='active'
+            ""><a href="#" data-value="@o.Value">@o.Text</a></li>
+  }
+</ul>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h1> Squad / Players</h1></div>
+        
+        @foreach (var item in Model)
+        {
+            string specialRole = "";
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="well well-sm">
+                    <div class="row ">
+                        <div class="col-sm-6 col-md-4 box-content">
+                            <img src="http://placehold.it/108x130" alt="" class="img-rounded img-responsive" />
+                        </div>
+                        <div class="col-sm-6 col-md-8 box-content">
+                            <h4>
+                                @if (!string.IsNullOrEmpty(item.SpecialRole) || item.SpecialRole != null)
+                                {
+
+                                    specialRole = " - " + item.SpecialRole;
+
+                                }
+
+                                @item.FullName <small>@specialRole</small>
+                            </h4>
+
+                            <p>
+                                @*<i class="glyphicon glyphicon-envelope"></i>@item.Age*@
+                                Age : @item.Age
+                                <br />
+                                @if (!string.IsNullOrEmpty(@item.Role) || @item.Role != null)
+                                {
+                                    @item.Role
+                                    <br />
+                                }
+
+                                @if (!string.IsNullOrEmpty(@item.Batting) || @item.Batting != null)
+                                {
+                                    @item.Batting
+                                    <br />
+                                }
+
+
+                                @if (!string.IsNullOrEmpty(@item.Bowling) || @item.Bowling != null)
+                                {
+                                    @item.Bowling
+                                    <br />
+                                }
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    
+    </div>
+
+
+
+

@@ -1,0 +1,94 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+    color: #999;
+}
+
+.p {
+    text-align: left;
+    padding-top: 120px;
+}
+
+    .p a {
+        text-decoration: underline;
+        color: blue;
+    }
+
+/*body {
+    padding-top: 10px;
+
+}*/
+
+.glyphicon {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/*small {
+    display: block;
+    line-height: 1.428571429;
+    color:#fa7f7f /*#999;
+}*/
+    
+.box-content {
+    padding-bottom: 5px;
+    padding-left: 5px;
+   
+    
+}
+
+.box-content img {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
